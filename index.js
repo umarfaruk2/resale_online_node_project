@@ -23,7 +23,7 @@ app.use(express.urlencoded({extended: true}));
 dbConnection();
 
 // router
-app.use('/api/product', productRoute);
+app.use('/api/v1/product', productRoute);
 
 // 404 error handler
 app.use((req, res, next) => {

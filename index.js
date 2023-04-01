@@ -9,7 +9,6 @@ const app = express();
 import dbConnection from './config/dbConnection.js';
 import productRoute from './routes/product.route.js';
 const port = process.env.PORT || 5000;
-const mongo_url = process.env.MONGO_URL;
 
 // middleware
 app.use(cors({
@@ -21,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 // db
-dbConnection(mongo_url);
+dbConnection();
 
 // router
 app.use('/api/product', productRoute);
